@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
 const hours_12 = 43200000;
-const port = 4000;
-const url = 'https://duty-telegram-bot.herokuapp.com/';
+const port = 3000;
+const url = 'https://f957d340.ngrok.io';
 
 
 const TelegramBot = require('node-telegram-bot-api');
