@@ -1,0 +1,28 @@
+{
+  "name": "telegram_bot",
+  "version": "1.0.0",
+  "description": "telegram bot",
+  "main": "index.js",
+  "dependencies": {
+    "bson": "^2.0.2",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "mongodb": "^3.0.4",
+    "mongodb-core": "^3.0.5",
+    "mongoose": "^5.0.9",
+    "node-telegram-bot-api": "^0.30.0",
+    "node-windows": "^0.1.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+
+  "engines": {
+    "node": "8.9.4"
+  }
+}
