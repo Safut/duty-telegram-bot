@@ -12,7 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "run": "node index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
