@@ -22,7 +22,7 @@ connectDatabase();
 
 function connectDatabase() {
  
-  mongoose.connect('mongodb://duty:advancE@ds115579.mlab.com:15579/duty');
+  mongoose.connect('mongodb:y');
 
   const db = mongoose.connection;
 
