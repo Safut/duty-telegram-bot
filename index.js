@@ -8,9 +8,9 @@ const url = 'https://duty-telegram-bot.herokuapp.com/';
 const TelegramBot = require('node-telegram-bot-api');
 const Token = '534477980:AAGmXdQADf4XLTAYJQrnWcP7JulJNH6H-60';
 const bot = new TelegramBot(Token,{polling:true}};
-//const bot = new TelegramBot(Token, {
+/*const bot = new TelegramBot(Token, {
  webHook: {port:port}
-});
+});*/
 
 //bot.setWebHook(`${url}/bot:${Token}`);
 
