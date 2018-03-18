@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
 const hours_12 = 43200000;
-const port = 3000;
-const url = 'https://f957d340.ngrok.io';
+const port = 443;
+const url = 'https://duty-telegram-bot.herokuapp.com/';
 
 
 const TelegramBot = require('node-telegram-bot-api');
 const Token = '534477980:AAGmXdQADf4XLTAYJQrnWcP7JulJNH6H-60';
-const bot = new TelegramBot(Token,{polling:true});
+const bot = new TelegramBot(Token, {
+ webHook: {port:port}
+});
 
-//bot.openWebHook();
-//bot.setWebHook(`${url}/bot:${Token}`);
+bot.setWebHook(`${url}/bot:${Token}`);
 
 
 connectDatabase();
