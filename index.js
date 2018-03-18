@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 const hours_12 = 43200000;
 const port = 443;
-const url = SECRET_URL;
+const url = secret_url;
 
 
 const TelegramBot = require('node-telegram-bot-api');
-const Token = TELEGRAM_TOKEN;
+const Token = telegram_token;
 //const bot = new TelegramBot(Token,{polling:true});
 const bot = new TelegramBot(Token, {
  webHook: {port:port}
@@ -19,7 +19,7 @@ connectDatabase();
 
 function connectDatabase() {
  
-  mongoose.connect('mongodb://duty:advancE@ds115579.mlab.com:15579/duty');
+  mongoose.connect(mongodb_url);
 
   const db = mongoose.connection;
 
