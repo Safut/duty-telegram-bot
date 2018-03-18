@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 const hours_12 = 43200000;
 const port = 8080;
-const url = 'https://api.starter-us-west-2.openshift.com/oapi/v1/namespaces/duty-telegram-bot/buildconfigs/telegram-bot/webhooks/25b85d4bff6bff25/generic';
+//const url = 'https://api.starter-us-west-2.openshift.com/oapi/v1/namespaces/duty-telegram-bot/buildconfigs/telegram-bot/webhooks/25b85d4bff6bff25/generic';
 
 
 const TelegramBot = require('node-telegram-bot-api');
