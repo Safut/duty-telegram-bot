@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
 const hours_12 = 43200000;
-const port = 443;
+const port = 8080;
 const url = 'https://duty-telegram-bot.herokuapp.com/';
 
 
