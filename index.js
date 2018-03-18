@@ -6,16 +6,11 @@ const url = 'https://f957d340.ngrok.io';
 
 
 const TelegramBot = require('node-telegram-bot-api');
-const Token = ;
-const bot = new TelegramBot(Token, {
-  webHook: {
-    port: port,
-    autoOpen: false
-  }
-});
+const Token = '534477980:AAGmXdQADf4XLTAYJQrnWcP7JulJNH6H-60';
+const bot = new TelegramBot(Token,{polling:true});
 
-bot.openWebHook();
-bot.setWebHook(`${url}/bot:${Token}`);
+//bot.openWebHook();
+//bot.setWebHook(`${url}/bot:${Token}`);
 
 
 connectDatabase();
