@@ -47,7 +47,7 @@ bot.onText(/\/duty/, (msg) => {
       
       if ((dateNow - data[i].date) <= hours_12 && (dateNow - data[i].date) > 0) {
         bot.sendMessage(chatId, "Дежурный:\n" +data[i].name);
-        bot.sendContact(chatId, data[i].phone, data[i].name);
+       // bot.sendContact(chatId, data[i].phone, data[i].name);
       };    
 
       if ((dateNow - data[i].date) > hours_12) {
@@ -69,7 +69,7 @@ bot.onText(/\/duty/, (msg) => {
 
         if ((dateNow - data[i].date) <= hours_12 && (dateNow - data[i].date) > 0) {
           bot.sendMessage(chatId, "Дежурный:\n" +data[i].name);
-          bot.sendContact(chatId, data[i].phone, data[i].name);
+         // bot.sendContact(chatId, data[i].phone, data[i].name);
         };
 
         User.findByIdAndUpdate(data[i]._id, {date: data[i].date, status: data[i].status}, {new:true}, 
