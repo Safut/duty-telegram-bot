@@ -9,8 +9,8 @@ const Token = '534477980:AAGmXdQADf4XLTAYJQrnWcP7JulJNH6H-60';
 //const bot = new TelegramBot(Token,{polling:true});
 const bot = new TelegramBot(Token,{
   webHook:{ 
-    port: 8080,
-    host: '172.31.58.178'
+    port: process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    host: process.env.OPENSHIFT_NODEJS_IP
   }
 });
 
