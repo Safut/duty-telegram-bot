@@ -10,7 +10,7 @@ const Token = '534477980:AAGmXdQADf4XLTAYJQrnWcP7JulJNH6H-60';
 const bot = new TelegramBot(Token,{
   webHook:{ 
     port: 8080,
-    host: 172.30.223.230
+    host: '172.30.223.230'
   }
 });
 
