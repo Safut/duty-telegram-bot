@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
 const hours_12 = 43200000;
-const url = 'https://duty-telegram-bot-duty-telegram-bot.7e14.starter-us-west-2.openshiftapps.com';
+const url = 'SECRET_URL';
 
 
 const TelegramBot = require('node-telegram-bot-api');
 const Token = TELEGRAM_TOKEN;
-//const bot = new TelegramBot(Token,{polling:true});
-const bot = new TelegramBot(Token,{
+const bot = new TelegramBot(Token,{polling:true});
+/*const bot = new TelegramBot(Token,{
   webHook:{ 
     port: process.env.OPENSHIFT_NODEJS_PORT || 8080,
     host: process.env.OPENSHIFT_NODEJS_IP 
   }
-});
+});*/
 
 bot.setWebHook(`${url}/${Token}`);
 bot.on('webhook_error', (error) => {
