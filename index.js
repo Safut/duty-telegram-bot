@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 const hours_12 = 43200000;
 const port = 443;
-const url = 'https://my-bot-safut.rhcloud.com/';
+const url = 'https://duty-bot-duty-telegram-bot.7e14.starter-us-west-2.openshiftapps.com/';
 
 
 const TelegramBot = require('node-telegram-bot-api');
@@ -10,7 +10,7 @@ const Token = '534477980:AAGmXdQADf4XLTAYJQrnWcP7JulJNH6H-60';
 //const bot = new TelegramBot(Token,{polling:true});
 const bot = new TelegramBot(Token);
 
-//bot.setWebHook(`${url}/${Token}`);
+bot.setWebHook(`${url}/${Token}`);
 
 
 connectDatabase();
