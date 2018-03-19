@@ -5,12 +5,12 @@ const url = 'https://duty-telegram-bot-duty-telegram-bot.7e14.starter-us-west-2.
 
 
 const TelegramBot = require('node-telegram-bot-api');
-const Token = '534477980:AAGmXdQADf4XLTAYJQrnWcP7JulJNH6H-60';
+const Token = TELEGRAM_TOKEN;
 //const bot = new TelegramBot(Token,{polling:true});
 const bot = new TelegramBot(Token,{
   webHook:{ 
     port: process.env.OPENSHIFT_NODEJS_PORT || 8080,
-    host: process.env.OPENSHIFT_NODEJS_IP || 'duty-telegram-bot.duty-telegram-bot.svc'
+    host: process.env.OPENSHIFT_NODEJS_IP 
   }
 });
 
@@ -24,7 +24,7 @@ connectDatabase();
 
 function connectDatabase() {
  
-  mongoose.connect('mongodb://duty:advancE@ds115579.mlab.com:15579/duty');
+  mongoose.connect(MONGODB_URL);
 
   const db = mongoose.connection;
 
