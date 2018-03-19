@@ -10,7 +10,7 @@ const Token = '534477980:AAGmXdQADf4XLTAYJQrnWcP7JulJNH6H-60';
 const bot = new TelegramBot(Token,{
   webHook:{ 
     port: process.env.OPENSHIFT_NODEJS_PORT || 8080,
-    host: process.env.OPENSHIFT_NODEJS_IP
+    host: process.env.OPENSHIFT_NODEJS_IP || 'duty-telegram-bot.duty-telegram-bot.svc'
   }
 });
 
