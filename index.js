@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
 const hours_12 = 43200000;
-const url = SECRET_URL;
+//const url = SECRET_URL;
 
 
 const TelegramBot = require('node-telegram-bot-api');
