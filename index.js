@@ -5,7 +5,7 @@ const hours_12 = 43200000;
 
 
 const TelegramBot = require('node-telegram-bot-api');
-const Token = TELEGRAM_TOKEN;
+const Token = '534477980:AAGmXdQADf4XLTAYJQrnWcP7JulJNH6H-60';
 const bot = new TelegramBot(Token,{polling:true});
 /*const bot = new TelegramBot(Token,{
   webHook:{ 
@@ -23,7 +23,7 @@ connectDatabase();
 
 function connectDatabase() {
  
-  mongoose.connect(MONGODB_URL);
+  mongoose.connect('mongodb://duty:advancE@ds115579.mlab.com:15579/duty');
 
   const db = mongoose.connection;
 
