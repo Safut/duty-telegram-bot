@@ -19,7 +19,6 @@ bot.on('webhook_error', (error) => {
   throw error;
 });*/
 
-console.log("Bot started");
 connectDatabase();
 
 function connectDatabase() {
