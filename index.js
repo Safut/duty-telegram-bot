@@ -5,7 +5,7 @@ const hours_12 = 43200000;
 
 
 const TelegramBot = require('node-telegram-bot-api');
-const Token = '534477980:AAGmXdQADf4XLTAYJQrnWcP7JulJNH6H-60';
+const Token = '587010368:AAHLJu72RO8yBW6n1k2LDVon8vpScy0B9LY';
 const bot = new TelegramBot(Token,{polling:true});
 /*const bot = new TelegramBot(Token,{
   webHook:{ 
