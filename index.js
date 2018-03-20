@@ -1,23 +1,10 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
 const hours_12 = 43200000;
-//const url = SECRET_URL;
-
 
 const TelegramBot = require('node-telegram-bot-api');
 const Token = '587010368:AAHLJu72RO8yBW6n1k2LDVon8vpScy0B9LY';
 const bot = new TelegramBot(Token,{polling:true});
-/*const bot = new TelegramBot(Token,{
-  webHook:{ 
-    port: process.env.OPENSHIFT_NODEJS_PORT || 8080,
-    host: process.env.OPENSHIFT_NODEJS_IP 
-  }
-});*/
-
-/*bot.setWebHook(`${url}/${Token}`);
-bot.on('webhook_error', (error) => {
-  throw error;
-});*/
 
 connectDatabase();
 
@@ -51,7 +38,7 @@ bot.onText(/\/duty/, (msg) => {
       
       if ((dateNow - data[i].date) <= hours_12 && (dateNow - data[i].date) > 0) {
        
-        bot.sendContact(chatId, data[i].phone, "Дежурный:\n" +data[i].name);
+        bot.sendContact(chatId, data[i].phone, "Дежурный: " +data[i].name);
       };    
 
       if ((dateNow - data[i].date) > hours_12) {
@@ -73,7 +60,7 @@ bot.onText(/\/duty/, (msg) => {
 
         if ((dateNow - data[i].date) <= hours_12 && (dateNow - data[i].date) > 0) {
          
-          bot.sendContact(chatId, data[i].phone, "Дежурный:\n" +data[i].name);
+          bot.sendContact(chatId, data[i].phone, "Дежурный: " +data[i].name);
         };
 
         User.findByIdAndUpdate(data[i]._id, {date: data[i].date, status: data[i].status}, {new:true}, 
