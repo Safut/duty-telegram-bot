@@ -14,10 +14,10 @@ const bot = new TelegramBot(Token,{polling:true});
   }
 });*/
 
-bot.setWebHook(`${url}/${Token}`);
+/*bot.setWebHook(`${url}/${Token}`);
 bot.on('webhook_error', (error) => {
   throw error;
-});
+});*/
 
 console.log("Bot started");
 connectDatabase();
