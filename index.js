@@ -3,14 +3,14 @@ const User = require('./models/user');
 const hours_12 = 43200000;
 
 const TelegramBot = require('node-telegram-bot-api');
-const Token = '587010368:AAHLJu72RO8yBW6n1k2LDVon8vpScy0B9LY';
+const Token = '';
 const bot = new TelegramBot(Token,{polling:true});
 
 connectDatabase();
 
 function connectDatabase() {
  
-  mongoose.connect('mongodb://duty:advancE@ds115579.mlab.com:15579/duty');
+  mongoose.connect('');
 
   const db = mongoose.connection;
 
