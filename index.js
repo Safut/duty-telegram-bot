@@ -48,7 +48,7 @@ bot.onText(/\/duty/, (msg) => {
   let msgChatId = msg.chat.id;
   let dateNow = new Date().getTime();
   
-  if (msg.text == '/duty' || msg.text == '/duty@SAbror_bot') {
+  if (msg.text == '/duty' || msg.text == '/duty@Duty_admin_bot') {
     updateData(dateNow,true)
       .then((dutys) => {
         if (dutys[1] == holiday.first[1] && dutys[2] == 'дневная') { 
@@ -105,6 +105,7 @@ let holiday = { first:[] };
   
   bot.onText(/\/holiday/, (msg, match) => {
     let msgChatId = msg.chat.id;
+    console.log(msgChatId);
     if (msgChatId == 119110758) 
       bot.sendMessage(msgChatId, "Выберите кого нужно сменить", vars.holidayList);  
   });
