@@ -24,7 +24,7 @@ function connectDatabase() {
   console.log('error', err);
   });
   db.once('open', () => {
-  console.log('connected to localhost database');
+  console.log('connected to database');
   });
   db.once('close', () => {
     console.log('disconnected to database');
