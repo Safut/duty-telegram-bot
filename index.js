@@ -16,7 +16,7 @@ bot.on('polling_error', (error) => {
 //Connect to database
 function connectDatabase() {
  
-  mongoose.connect('mongodb://localhost/duty');
+  mongoose.connect(vars.mongoUrl);
 
   const db = mongoose.connection;
 
