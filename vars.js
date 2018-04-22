@@ -49,3 +49,4 @@ const dutyList = {
   module.exports.dayShift = dayShift;
   module.exports.nightShift = nightShift;
   module.exports.token = '534477980:AAGmXdQADf4XLTAYJQrnWcP7JulJNH6H-60';
+  module.exports.mongoUrl = 'mongodb://duty:advancE@ds115579.mlab.com:15579/duty';
