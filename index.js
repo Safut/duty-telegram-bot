@@ -50,7 +50,7 @@ bot.onText(/\/duty/, (msg) => {
   
   if (msg.text == '/duty' || msg.text == '/duty@Duty_admin_bot') {
     updateData(dateNow,true)
-      .then((dutys) => {
+      .then( async (dutys) => {
         if (dutys[1] == holiday.first[1] && dutys[2] == 'дневная') { 
           dutys[1] = holiday.second[1]; 
           dutys[0] = holiday.second[0];          
@@ -59,10 +59,7 @@ bot.onText(/\/duty/, (msg) => {
           dutys[1] = holiday.third[1]; 
           dutys[0] = holiday.third[0];
         };
-        bot.sendMessage(msgChatId, "Дежурный " +dutys[1]+ ", смена " +dutys[2]);
-        return dutys;
-      })
-      .then((dutys) => {
+        await bot.sendMessage(msgChatId, "Дежурный " +dutys[1]+ ", смена " +dutys[2]);
         bot.sendContact(msgChatId, dutys[0], dutys[1]);
       });
   };
@@ -82,7 +79,7 @@ bot.onText(/\/duty (.+)/, (msg,match) => {
     bot.sendMessage(msgChatId, "Неверный формат или нарушен порог! Порог даты от 01.01.2018г. до 01.01.2050г.\nПопробуйте еще раз!");
   } else {
   updateData(dateFromUser)
-  .then((dutys) => {
+  .then( async (dutys) => {
     if (dutys[1] == holiday.first[1] && dutys[2] == 'дневная') { 
       dutys[1] = holiday.second[1]; 
       dutys[0] = holiday.second[0];          
@@ -91,11 +88,8 @@ bot.onText(/\/duty (.+)/, (msg,match) => {
       dutys[1] = holiday.third[1]; 
       dutys[0] = holiday.third[0];
     };
-    bot.sendMessage(msgChatId, `Дежурный на дату: ${formatDate(new Date(dateFromUser))} ${dutys[1]}, смена ${dutys[2]}`);
-    return dutys;      
-  })
-  .then((dutys) => {
-    bot.sendContact(msgChatId, dutys[0], dutys[1]);
+    await bot.sendMessage(msgChatId, `Дежурный на дату: ${formatDate(new Date(dateFromUser))} ${dutys[1]}, смена ${dutys[2]}`);
+    bot.sendContact(msgChatId, dutys[0], dutys[1]);     
   });
   };      
 });
