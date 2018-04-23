@@ -106,7 +106,7 @@ let holiday = { first:[] };
   bot.onText(/\/holiday/, (msg, match) => {
     let msgChatId = msg.chat.id;
     console.log(msgChatId);
-    if (msgChatId == 119110758) 
+    if (msgChatId == 119110758 || 178736163 == msgChatId) 
       bot.sendMessage(msgChatId, "Выберите кого нужно сменить", vars.holidayList);  
   });
 
