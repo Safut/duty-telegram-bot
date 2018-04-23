@@ -48,5 +48,5 @@ const dutyList = {
   module.exports.holidayList = holidayList;
   module.exports.dayShift = dayShift;
   module.exports.nightShift = nightShift;
-  module.exports.token = '587010368:AAHLJu72RO8yBW6n1k2LDVon8vpScy0B9LY';
-  module.exports.mongoUrl = 'mongodb://duty:advancE@ds115579.mlab.com:15579/duty';
+  module.exports.token = '';
+  module.exports.mongoUrl = '';
