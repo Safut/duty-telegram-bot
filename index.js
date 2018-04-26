@@ -49,7 +49,7 @@ bot.onText(/\/duty/, (msg) => {
   let dateNow = new Date().getTime();
   
   if (msg.text == '/duty' || msg.text == '/duty@Duty_admin_bot') {
-    updateData(dateNow,true)
+    updateDate(dateNow,true)
       .then( async (dutys) => {
         if (dutys[1] == holiday.first[1] && dutys[2] == 'дневная') { 
           dutys[1] = holiday.second[1]; 
@@ -74,11 +74,10 @@ bot.onText(/\/duty (.+)/, (msg,match) => {
   let maxDate = new Date(2050,0,01).getTime();
   dateFromUser = new Date(dateFromUser[2], (dateFromUser[1] - 1), dateFromUser[0], dateFromUser[3] || 0, dateFromUser[4] || 0).getTime(); 
   
-  updateData(dateNow,true);
   if (dateFromUser > maxDate || isNaN(dateFromUser) || dateFromUser < minDate ) {
     bot.sendMessage(msgChatId, "Неверный формат или нарушен порог! Порог даты от 01.01.2018г. до 01.01.2050г.\nПопробуйте еще раз!");
   } else {
-  updateData(dateFromUser)
+  updateDate(dateFromUser)
   .then( async (dutys) => {
     if (dutys[1] == holiday.first[1] && dutys[2] == 'дневная') { 
       dutys[1] = holiday.second[1]; 
@@ -156,7 +155,7 @@ function setHoliday(data, place) {
 
 
 //Function for update date and find duty admin
-function updateData(dateNow,update) {
+function updateDate(dateNow,update) {
   
   return new Promise(function (resolve, reject) {
     
@@ -178,7 +177,7 @@ function updateData(dateNow,update) {
                 data[i].status = 'дневная';                      
               break;        
             };
-          if (update) {
+          if (update && (dateNow - data[i].date) < hours_12) {
             User.findByIdAndUpdate(data[i]._id, {date: data[i].date, status: data[i].status}, {new:true}, 
               (err,result) => {   
               if (err) throw err;    
