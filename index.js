@@ -178,11 +178,15 @@ function updateDate(dateNow,update) {
               break;        
             };
           if (update && (dateNow - data[i].date) < hours_12) {
-            User.findByIdAndUpdate(data[i]._id, {date: data[i].date, status: data[i].status}, {new:true}, 
+            User.findByIdAndUpdate(
+              data[i]._id, 
+              {date: data[i].date, status: data[i].status}, 
+              {new:true}, 
               (err,result) => {   
-              if (err) throw err;    
-              console.log(result);     
-            });
+                if (err) throw err;    
+                console.log(result);
+              }
+            );
           };
         };
         while (( data[i].date - dateNow) > hours_12) {
