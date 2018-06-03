@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
 const hours_12 = 43200000;
+const hours_5 = 18000000;
 const vars = require('./vars');
 const telegramBot = require('node-telegram-bot-api');
 const bot = new telegramBot(vars.token, {
@@ -203,7 +204,7 @@ function updateDate(dateNow,update) {
             break;        
           };
         };
-        if ((dateNow - data[i].date) < hours_12 && (dateNow - data[i].date) >= 0) {
+        if ((dateNow - data[i].date + hours_5) < hours_12 && (dateNow - data[i].date + hours_5) >= 0) {
           let dutys = [data[i].phone, data[i].name, data[i].status];
           resolve(dutys); 
         };
