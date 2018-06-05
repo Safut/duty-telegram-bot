@@ -46,7 +46,7 @@ bot.onText(/\/start/, (msg,match) => {
 
 bot.onText(/\/duty/, (msg) => {
   let msgChatId = msg.chat.id;
-  let dateNow = new Date().getTime();
+  let dateNow = new Date().getTime() + 18000000;
   
   if (msg.text == '/duty' || msg.text == '/duty@Duty_admin_bot') {
     updateDate(dateNow,true)
