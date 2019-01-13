@@ -3,7 +3,8 @@ const User = require('./models/user');
 const telegramBot = require('node-telegram-bot-api');
 const hours_12 = 43200000;
 const mongoUrl = process.env.mongoUrl;
-const bot = new telegramBot(process.env.token, {
+const token = process.env.token;
+const bot = new telegramBot(token, {
   polling : true
 });
 
