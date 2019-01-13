@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 const telegramBot = require('node-telegram-bot-api');
 const hours_12 = 43200000;
-const vars = require('./vars');
-const bot = new telegramBot(vars.token, {
+const bot = new telegramBot(token, {
   polling : true
 });
 
@@ -16,7 +15,7 @@ bot.on('polling_error', (error) => {
 //Connect to database
 function connectDatabase() {
  
-  mongoose.connect(vars.mongoUrl);
+  mongoose.connect(mongoUrl);
 
   const db = mongoose.connection;
 
