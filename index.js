@@ -4,6 +4,7 @@ const mongoUrl = process.env.mongoUrl;
 const token = process.env.token;
 const hours_12 = 43200000;
 const telegramBot = require('node-telegram-bot-api');
+var http = require("http");
 
 const bot = new telegramBot(token, {
   polling : true
@@ -236,3 +237,8 @@ function formatDate(date) {
 
   return dd + '.' + mm + '.' + yy + ' время: ' + hh + ':' + mins;
 };
+
+
+setInterval(function() {
+    http.get("https://duty-telegram-bot.herokuapp.com/");
+}, 60000); // every 5 minutes (300000)
