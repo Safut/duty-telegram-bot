@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
 const vars = require('./vars');
-const mongoUrl = vars.mongoUrl;
-const token = vars.token;
+const mongoUrl = process.env.mongoUrl;
+const token = process.env.token;
 const hours_12 = 43200000;
 const telegramBot = require('node-telegram-bot-api');
 
