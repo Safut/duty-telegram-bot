@@ -10,6 +10,8 @@ const bot = new telegramBot(token, {
   polling : true
 });
 
+console.log(process.env.token);
+console.log(process.env.mongoUrl);
 
 bot.on('polling_error', (error) => {
   throw error;
