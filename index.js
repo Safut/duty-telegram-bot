@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
-const vars = require('./vars');
 const mongoUrl = process.env.mongoUrl;
 const token = process.env.token;
 const hours_12 = 43200000;
