@@ -240,5 +240,5 @@ function formatDate(date) {
 
 
 setInterval(function() {
-    http.get("https://duty-telegram-bot.herokuapp.com/");
-}, 40000); // every 5 minutes (300000)
+    http.get("https://duty-telegram-bot.herokuapp.com");
+}, 45000); // every 5 minutes (300000)
