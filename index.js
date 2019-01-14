@@ -32,9 +32,9 @@ bot.setWebHook(`${URL}/${TOKEN}`);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.listen(PORT, (err) => {
+app.listen('80', (err) => {
   if (err) return console.log('Some error', err);
-  console.log(`server is listening on ${PORT}`);
+  console.log(`server is listening on 80`);
 });
 
 app.get('/', async (req, res) => {
