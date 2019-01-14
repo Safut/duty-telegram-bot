@@ -5,6 +5,7 @@ const token = process.env.token;
 const hours_12 = 43200000;
 const telegramBot = require('node-telegram-bot-api');
 const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 var http = require("http");
 
@@ -19,10 +20,10 @@ bot.on('polling_error', (error) => {
   throw error;
 });
 
-express.use(bodyParser.urlencoded({ extended: true }));
-express.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-express.get('/test', async (req, res) => {
+app.get('/test', async (req, res) => {
   res.render('test.ejs');
 });
 
