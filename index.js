@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
+const port = process.env.PORT;
 const mongoUrl = process.env.mongoUrl;
 const token = process.env.token;
 const hours_12 = 43200000;
@@ -13,8 +14,9 @@ const bot = new telegramBot(token, {
   polling : true
 });
 
-console.log(process.env.token);
-console.log(process.env.mongoUrl);
+console.log(token);
+console.log(mongoUrl);
+console.log(port);
 
 bot.on('polling_error', (error) => {
   throw error;
@@ -22,6 +24,11 @@ bot.on('polling_error', (error) => {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.listen(port, (err) => {
+  if (err) return console.log('Some error', err);
+  console.log(`server is listening on ${port}`);
+});
+
 
 app.get('/', async (req, res) => {
   res.render('test.ejs');
