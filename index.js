@@ -5,6 +5,7 @@ const token = process.env.token;
 const hours_12 = 43200000;
 const telegramBot = require('node-telegram-bot-api');
 const express = require('express');
+const bodyParser = require('bodyParser');
 var http = require("http");
 
 const bot = new telegramBot(token, {
