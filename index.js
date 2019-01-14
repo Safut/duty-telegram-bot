@@ -24,6 +24,10 @@ const options = {
   }
 };
 console.log(URL);
+console.log(HOST);
+console.log(PORT);
+console.log(mongoURL);
+
 const bot = new telegramBot(TOKEN, options);
 bot.setWebHook(`${URL}/bot${TOKEN}`);
 
