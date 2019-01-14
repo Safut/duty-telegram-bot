@@ -29,10 +29,15 @@ app.listen(port, (err) => {
   console.log(`server is listening on ${port}`);
 });
 
-
 app.get('/', async (req, res) => {
   res.render('test.ejs');
 });
+
+
+setInterval(function() {
+    http.get("http://duty-telegram-bot.herokuapp.com");
+}, 60000); // every 5 minutes (300000)
+
 
 //Connect to database
 function connectDatabase() {
@@ -253,8 +258,3 @@ function formatDate(date) {
 
   return dd + '.' + mm + '.' + yy + ' время: ' + hh + ':' + mins;
 };
-
-
-setInterval(function() {
-    http.get("https://duty-telegram-bot.herokuapp.com");
-}, 120000); // every 5 minutes (300000)
