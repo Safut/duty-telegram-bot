@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 const URL = process.env.APP_URL;
 const PORT = process.env.PORT;
+const HOST = process.env.HOST;
 const mongoUrl = process.env.mongoUrl;
 const TOKEN = process.env.TOKEN;
 const hours_12 = 43200000;
@@ -15,10 +16,11 @@ const options = {
   webHook: {
     // Port to which you should bind is assigned to $PORT variable
     // See: https://devcenter.heroku.com/articles/dynos#local-environment-variables
-    port: PORT
+    port: PORT,
     // you do NOT need to set up certificates since Heroku provides
     // the SSL certs already (https://<app-name>.herokuapp.com)
     // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
+    host: HOST
   }
 };
 console.log(URL);
