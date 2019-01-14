@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
-const url = process.env.APP_URL;
-const port = process.env.PORT;
+const URL = process.env.APP_URL;
+const PORT = process.env.PORT;
 const mongoUrl = process.env.mongoUrl;
-const token = process.env.token;
+const TOKEN = process.env.TOKEN;
 const hours_12 = 43200000;
 const telegramBot = require('node-telegram-bot-api');
 const express = require('express');
@@ -15,21 +15,21 @@ const options = {
   webHook: {
     // Port to which you should bind is assigned to $PORT variable
     // See: https://devcenter.heroku.com/articles/dynos#local-environment-variables
-    port: port
+    port: PORT
     // you do NOT need to set up certificates since Heroku provides
     // the SSL certs already (https://<app-name>.herokuapp.com)
     // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
   }
 };
-console.log(url);
-const bot = new telegramBot(token, options);
-bot.setWebHook(`${url}/bot${token}`);
+console.log(URL);
+const bot = new telegramBot(TOKEN, options);
+bot.setWebHook(`${url}/bot${TOKEN}`);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.listen(port, (err) => {
   if (err) return console.log('Some error', err);
-  console.log(`server is listening on ${port}`);
+  console.log(`server is listening on ${PORT}`);
 });
 
 app.get('/', async (req, res) => {
