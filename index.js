@@ -22,7 +22,7 @@ const options = {
     // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
   }
 };
-console.log(process);
+console.log(process.env);
 console.log(URL);
 console.log(PORT);
 console.log(mongoURL);
@@ -30,16 +30,16 @@ console.log(mongoURL);
 const bot = new telegramBot(TOKEN, options);
 bot.setWebHook(`${URL}/${TOKEN}`);
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.listen('80', (err) => {
-  if (err) return console.log('Some error', err);
-  console.log(`server is listening on 80`);
-});
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.listen('80', (err) => {
+//   if (err) return console.log('Some error', err);
+//   console.log(`server is listening on 80`);
+// });
 
-app.get('/', async (req, res) => {
-  res.render('test.ejs');
-});
+// app.get('/', async (req, res) => {
+//   res.render('test.ejs');
+// });
 
 
 setInterval(function() {
