@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
-process.env.PORT = 4770;
 const port = process.env.PORT;
 const mongoUrl = process.env.mongoUrl;
 const token = process.env.token;
