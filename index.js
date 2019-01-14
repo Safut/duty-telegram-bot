@@ -23,7 +23,7 @@ bot.on('polling_error', (error) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/test', async (req, res) => {
+app.get('/', async (req, res) => {
   res.render('test.ejs');
 });
 
