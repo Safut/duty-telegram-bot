@@ -23,7 +23,7 @@ const options = {
 };
 console.log(URL);
 const bot = new telegramBot(TOKEN, options);
-bot.setWebHook(`${url}/bot${TOKEN}`);
+bot.setWebHook(`${URL}/bot${TOKEN}`);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
