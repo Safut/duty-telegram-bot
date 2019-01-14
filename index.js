@@ -29,7 +29,7 @@ console.log(PORT);
 console.log(mongoURL);
 
 const bot = new telegramBot(TOKEN, options);
-bot.setWebHook(`${URL}/bot${TOKEN}`);
+bot.setWebHook(`${URL}/${TOKEN}`);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
