@@ -20,11 +20,11 @@ const options = {
     // you do NOT need to set up certificates since Heroku provides
     // the SSL certs already (https://<app-name>.herokuapp.com)
     // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
-    host: HOST
+    host: 0.0.0.0
   }
 };
+console.log(process.env);
 console.log(URL);
-console.log(HOST);
 console.log(PORT);
 console.log(mongoURL);
 
