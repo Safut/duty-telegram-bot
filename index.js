@@ -27,7 +27,7 @@ bot.setWebHook(`${URL}/bot${TOKEN}`);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.listen(port, (err) => {
+app.listen(PORT, (err) => {
   if (err) return console.log('Some error', err);
   console.log(`server is listening on ${PORT}`);
 });
