@@ -3,7 +3,7 @@ const User = require('./models/user');
 const URL = process.env.APP_URL;
 const PORT = process.env.PORT;
 const HOST = process.env.HOST;
-const mongoUrl = process.env.mongoUrl;
+const mongoURL = process.env.mongoURL;
 const TOKEN = process.env.TOKEN;
 const hours_12 = 43200000;
 const telegramBot = require('node-telegram-bot-api');
@@ -51,7 +51,7 @@ setInterval(function() {
 //Connect to database
 function connectDatabase() {
  
-  mongoose.connect(mongoUrl);
+  mongoose.connect(mongoURL);
 
   const db = mongoose.connection;
 
