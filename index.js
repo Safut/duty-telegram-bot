@@ -22,7 +22,7 @@ const options = {
     // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
   }
 };
-console.log(process.env);
+console.log(process);
 console.log(URL);
 console.log(PORT);
 console.log(mongoURL);
