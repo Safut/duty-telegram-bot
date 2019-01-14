@@ -18,6 +18,9 @@ bot.on('polling_error', (error) => {
   throw error;
 });
 
+express.use(bodyParser.urlencoded({ extended: true }));
+express.use(bodyParser.json());
+
 express.get('/test', async (req, res) => {
   res.render('test.ejs');
 });
