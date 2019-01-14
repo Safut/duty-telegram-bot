@@ -8,7 +8,7 @@ const telegramBot = require('node-telegram-bot-api');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-var http = require("http");
+const http = require("http");
 
 const bot = new telegramBot(token, {
   polling : true
@@ -16,7 +16,6 @@ const bot = new telegramBot(token, {
 
 console.log(token);
 console.log(mongoUrl);
-console.log(port);
 
 bot.on('polling_error', (error) => {
   throw error;
@@ -36,7 +35,7 @@ app.get('/', async (req, res) => {
 
 setInterval(function() {
     http.get("http://duty-telegram-bot.herokuapp.com");
-}, 60000); // every 5 minutes (300000)
+}, 300000); // every 5 minutes (300000)
 
 
 //Connect to database
