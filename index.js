@@ -21,7 +21,7 @@ const options = {
     // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
   }
 };
-
+console.log(url);
 const bot = new telegramBot(token, options);
 bot.setWebHook(`${url}/bot${token}`);
 
