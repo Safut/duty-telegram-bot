@@ -7,10 +7,10 @@ const mongoURL = process.env.mongoURL;
 const TOKEN = process.env.TOKEN;
 const hours_12 = 43200000;
 const telegramBot = require('node-telegram-bot-api');
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const http = require("http");
+// const express = require('express');
+// const app = express();
+// const bodyParser = require('body-parser');
+// const http = require("http");
 
 const options = {
   webHook: {
@@ -22,10 +22,10 @@ const options = {
     // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
   }
 };
-console.log(process.env);
-console.log(URL);
-console.log(PORT);
-console.log(mongoURL);
+// console.log(process.env);
+// console.log(URL);
+// console.log(PORT);
+// console.log(mongoURL);
 
 const bot = new telegramBot(TOKEN, options);
 bot.setWebHook(`${URL}/${TOKEN}`);
@@ -42,9 +42,9 @@ bot.setWebHook(`${URL}/${TOKEN}`);
 // });
 
 
-setInterval(function() {
-    http.get("http://duty-telegram-bot.herokuapp.com");
-}, 300000); // every 5 minutes (300000)
+// setInterval(function() {
+//     http.get("http://duty-telegram-bot.herokuapp.com");
+// }, 300000); // every 5 minutes (300000)
 
 
 //Connect to database
